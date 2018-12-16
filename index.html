@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Jedi Name Generator</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700" rel="stylesheet">
+  </head>
+  <body>
+    <div class="input-box-container">
+      <div class="input-box1">
+        <h4>Enter Your First Name.</h4>
+        <input type="text" id="first-name-input" value="" placeholder="First Name...">
+      </div>
+      <div class="input-box2">
+        <h4>Enter Your Last Name.</h4>
+        <input type="text" id="last-name-input" value="" placeholder="Last Name...">
+      </div>
+      <div class="input-box3">
+        <h4>Enter Your Mother's Maiden Name.</h4>
+        <input type="text" id="mmn-input" value="" placeholder="Mother's Maiden Name...">
+      </div>
+      <div class="input-box4">
+        <h4>Enter Your Home City.</h4>
+        <input type="text" id="city-input" value="" placeholder="City...">
+      </div>
+      <button type="button" id="button">Enter</button>
+    </div>
+    <div class="output-container">
+      <h3>Your Jedi Name Is...</h3>
+      <div class="border-only">
+        <div class="first-name-output">
+          <h4 id = "first-jedi-name"></h4>
+        </div>
+        <div class="last-name-output">
+          <h4 id = "last-jedi-name"></h4>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+    document.getElementById('button').addEventListener('click', function(){
+
+      let vader = 'I see through the lies of the jedi!'
+      if (document.getElementById('first-name-input').value.toUpperCase() == 'ANAKIN' && document.getElementById('last-name-input').value.toUpperCase() == 'SKYWALKER') {
+        document.getElementById('first-jedi-name').innerHTML = vader.toUpperCase()
+        document.getElementById('last-jedi-name').innerHTML = ''
+
+      } else {
+
+    // 1st 3 letters of Mothers Maiden Name
+    let input1 = document.getElementById("mmn-input").value;
+    // 1st 2 letters of birth city
+    let input2 = document.getElementById("city-input").value;
+    // 1st 3 letters of last name
+    let input3 = document.getElementById("last-name-input").value;
+    // 1st 2 letters of first name
+    let input4 = document.getElementById("first-name-input").value;
+
+    let resultArray1 = []
+    let resultArray2 = []
+
+    for (i = 0; i < 3; i++) {
+      resultArray1.push(input1[i])
+    }
+
+    for (i = 0; i < 2; i++) {
+      resultArray1.push(input2[i])
+    }
+
+    for (i = 0; i < 3; i++) {
+      resultArray2.push(input3[i])
+    }
+
+    for (i = 0; i < 2; i++) {
+      resultArray2.push(input4[i])
+    }
+
+    document.getElementById('first-jedi-name').innerHTML = resultArray1.join('').toUpperCase();
+    document.getElementById('last-jedi-name').innerHTML = resultArray2.join('').toUpperCase();
+
+    }
+  })
+
+    </script>
+  </body>
+</html>
