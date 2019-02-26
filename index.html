@@ -41,7 +41,9 @@
     <script type="text/javascript">
 
     document.getElementById('button').addEventListener('click', function(){
-
+      
+    // This first part is an Easter Egg. Typing in 'Anakin Skywalker' will return a quote from Episode III.
+      
       let vader = 'I see through the lies of the jedi!'
       if (document.getElementById('first-name-input').value.toUpperCase() == 'ANAKIN' && document.getElementById('last-name-input').value.toUpperCase() == 'SKYWALKER') {
         document.getElementById('first-jedi-name').innerHTML = vader.toUpperCase()
